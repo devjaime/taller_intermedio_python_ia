@@ -1,162 +1,60 @@
-# README - Automatización de Consultas SQL con Voz, Whisper y Llama
+# Taller Intermedio Python IA
 
-Este proyecto utiliza **Streamlit**, **Groq API**, y **PostgreSQL** para automatizar la generación y ejecución de consultas SQL basadas en transcripciones de voz. El flujo incluye grabar audio, transcribirlo, generar consultas SQL con un modelo de lenguaje grande (LLM) y ejecutarlas en una base de datos.
+Curso de nivel intermedio de Python para Inteligencia Artificial. Construye sobre los fundamentos y avanza en ML.
 
-## Instalación de dependencias
+![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)
+![AI](https://img.shields.io/badge/AI-Intermediate-green.svg)
+![Stars](https://img.shields.io/badge/Stars-6-orange)
 
-Asegúrate de tener **Python 3.8 o superior** instalado.
+## 📚 Descripción
 
-### 1. Clonar el repositorio
+Continúa tu camino en Python para IA. Este taller de nivel intermedio cubre temas como manipulación de datos, visualización y primeros modelos de Machine Learning.
+
+## 🛠️ Stack
+
+- **Lenguaje:** Python 3.11+
+- **Librerías:** NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn
+- **Entorno:** Jupyter Notebooks
+
+## 🚀 Quick Start
+
 ```bash
-$ git clone https://github.com/devjaime/taller_intermedio_python_ia.git
-$ cd <nombre-del-directorio>
+# Clonar el repositorio
+git clone https://github.com/devjaime/taller_intermedio_python_ia.git
+cd taller_intermedio_python_ia
+
+# Crear entorno virtual
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+
+# Instalar dependencias
+pip install -r requirements.txt
+
+# Ejecutar Jupyter
+jupyter notebook
 ```
 
-### 2. Crear un entorno virtual
-```bash
-$ python -m venv .venv
-$ source .venv/bin/activate  # En Windows: .venv\Scripts\activate
-```
+## 📖 Contenido
 
-### 3. Instalar las dependencias necesarias
-```bash
-$ pip install streamlit sounddevice scipy psycopg2-binary pandas requests
-```
+- Manipulación de datos con Pandas
+- Visualización con Matplotlib/Seaborn
+- Intro a Machine Learning
+- Preprocesamiento de datos
+- Proyectos intermedios
 
-## Configuración
+## 🤝 Contribuir
 
-### 1. API Key de Groq
-Este proyecto requiere una API Key válida de Groq para transcribir audio y generar consultas SQL.
+1. Fork el repositorio
+2. Crea una rama para tu feature (`git checkout -b feature/nueva-funcion`)
+3. Commit tus cambios (`git commit -m 'Agrega nueva función'`)
+4. Push a la rama (`git push origin feature/nueva-funcion`)
+5. Abre un Pull Request
 
-- Ingresa tu API Key al ejecutar la aplicación en el campo de configuración de la barra lateral.
+## 📄 Licencia
 
-### 2. Configuración de la base de datos
-Proporciona los siguientes detalles para conectarte a tu base de datos PostgreSQL en la barra lateral:
+MIT License - ver archivo [LICENSE](LICENSE) para más detalles.
 
+---
 
-- **descargar postgres**: [https://www.postgresql.org/download/](https://www.postgresql.org/download/)
-- **Host**: Dirección de tu servidor de base de datos (por defecto: `localhost`)
-- **Nombre de la base de datos**: Nombre de tu base de datos (por defecto: `postgres`)
-- **Usuario**: Usuario de la base de datos (por defecto: `postgres`)
-- **Contraseña**: Contraseña de la base de datos
-- Crear el esquema de la tabla:
-```sql
-CREATE TABLE ventas (
-    id SERIAL PRIMARY KEY,
-    producto VARCHAR(100) NOT NULL,
-    cantidad INT NOT NULL,
-    precio DECIMAL(10, 2) NOT NULL,
-    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-- Crear el listado de ventas:
-```sql
-INSERT INTO ventas (producto, cantidad, precio) VALUES
-('Laptop', 5, 999.99),
-('Teclado', 10, 49.99),
-('Ratón', 15, 19.99);
-```
-
-
-## Ejecución
-
-### 1. Inicia la aplicación
-Ejecuta el siguiente comando para iniciar la aplicación:
-```bash
-$ streamlit run app.py
-```
-
-### 2. Pasos en la interfaz
-1. **Configura la API Key**: Ingresa tu API Key de Groq en el panel lateral izquierdo.
-2. **Configura la base de datos**: Completa los detalles de tu conexión a PostgreSQL.
-3. **Graba audio**:
-    - Haz clic en el botón "Grabar Audio" para capturar tu voz.
-    - El audio se guardará en formato WAV y se transcribirá usando la API de Groq.
-4. **Genera la consulta SQL**:
-    - Basado en la transcripción, se generará automáticamente una consulta SQL.
-    - Revisa y edita la consulta generada si es necesario.
-5. **Ejecuta la consulta**:
-    - Si la consulta generada es válida, se ejecutará en la base de datos configurada.
-    - Los resultados se mostrarán en una tabla interactiva.
-6. **Exporta los resultados**:
-    - Descarga los resultados en formato CSV con el botón correspondiente.
-
-## Instalación de PyCharm Community y creación de entornos virtuales
-
-### 1. Descarga e instalación de PyCharm Community
-- Descarga PyCharm Community desde su página oficial: [https://www.jetbrains.com/pycharm/download](https://www.jetbrains.com/pycharm/download)
-- Sigue las instrucciones del instalador para tu sistema operativo.
-
-### 2. Configura el proyecto en PyCharm
-1. Abre PyCharm y selecciona **"Open"** para importar el repositorio clonado.
-2. Configura el intérprete del proyecto:
-   - Ve a **File > Settings > Project > Python Interpreter**.
-   - Haz clic en **"Add Interpreter"** y selecciona **Virtualenv Environment**.
-   - Escoge la ubicación de tu entorno virtual `.venv` creado anteriormente.
-3. PyCharm detectará automáticamente las dependencias del proyecto.
-
-### 3. Instala dependencias adicionales
-Abre el terminal integrado en PyCharm y ejecuta:
-```bash
-$ pip install -r requirements.txt  # Si el archivo requirements.txt está disponible
-```
-
-## Estructura del proyecto
-
-```
-├── app.py            # Código principal de la aplicación
-├── audio.wav         # Archivo de audio grabado (temporal)
-├── README.md         # Documentación del proyecto
-└── requirements.txt  # Lista de dependencias (opcional)
-```
-
-## Notas importantes
-
-1. **Formatos de audio compatibles**:
-   - El archivo grabado se guarda en formato WAV, compatible con la API de Groq.
-
-2. **Errores comunes**:
-   - Si recibes un error relacionado con el formato `Content-Type`, asegúrate de que el archivo de audio se envía como `multipart/form-data`.
-   - Si la consulta SQL generada no es válida, edítala antes de ejecutarla.
-
-3. **Limitaciones**:
-   - La API de Groq puede tener restricciones de tokens o latencia en solicitudes concurrentes.
-
-
-## instalaciòn docker postgress
-## Iniciar la Base de Datos con Docker
-
-Este proyecto incluye un archivo `Dockerfile` para configurar y ejecutar PostgreSQL localmente con un esquema inicial.
-
-### 1. Construir la imagen de Docker
-Ejecuta el siguiente comando en el directorio donde se encuentra el `Dockerfile`:
-```bash
-docker build -t postgres-local .
-```
-2. Ejecutar el contenedor
-Inicia el contenedor con el siguiente comando:
-```bash
-docker run -d \
-  --name postgres-container \
-  -e POSTGRES_USER=postgres \
-  -e POSTGRES_PASSWORD=postgres1 \
-  -e POSTGRES_DB=db_test \
-  -p 5433:5432 \
-  postgres-local
-```
-3. Verificar el contenedor
-Confirma que el contenedor esté ejecutándose correctamente:
-```
-docker ps
-```
-
-## Recursos
-
-- **Documentación de Groq**: [https://console.groq.com/docs/](https://console.groq.com/docs/)
-- **Documentación de Streamlit**: [https://docs.streamlit.io/](https://docs.streamlit.io/)
-- **Documentación de PostgreSQL**: [https://www.postgresql.org/docs/](https://www.postgresql.org/docs/)
-- **Guía de PyCharm**: [https://www.jetbrains.com/help/pycharm/](https://www.jetbrains.com/help/pycharm/)
-
-## Licencia
-Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
-
+⭐ Si te fue útil, dale star al repositorio
