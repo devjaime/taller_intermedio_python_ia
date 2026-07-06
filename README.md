@@ -1,22 +1,19 @@
-# Taller Intermedio Python IA
+# Taller Intermedio de Python para IA
 
-Curso de nivel intermedio de Python para Inteligencia Artificial. Construye sobre los fundamentos y avanza en ML.
+Curso intermedio de Python enfocado en Inteligencia Artificial, Machine Learning y Deep Learning con proyectos reales.
 
-![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)
-![AI](https://img.shields.io/badge/AI-Intermediate-green.svg)
-![Stars](https://img.shields.io/badge/Stars-6-orange)
+## Stack
 
-## 📚 Descripción
+- **Lenguaje:** Python
+- **Enfoque:** Machine Learning, Deep Learning, IA
+- **Nivel:** Intermedio
 
-Continúa tu camino en Python para IA. Este taller de nivel intermedio cubre temas como manipulación de datos, visualización y primeros modelos de Machine Learning.
+## Requisitos
 
-## 🛠️ Stack
+- Python 3.8+
+- Conocimientos básicos de programación
 
-- **Lenguaje:** Python 3.11+
-- **Librerías:** NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn
-- **Entorno:** Jupyter Notebooks
-
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Clonar el repositorio
@@ -31,30 +28,28 @@ venv\Scripts\activate     # Windows
 # Instalar dependencias
 pip install -r requirements.txt
 
-# Ejecutar Jupyter
+# Ejecutar notebooks o scripts
 jupyter notebook
 ```
 
-## 📖 Contenido
+## Contenido del Curso
 
-- Manipulación de datos con Pandas
-- Visualización con Matplotlib/Seaborn
-- Intro a Machine Learning
-- Preprocesamiento de datos
-- Proyectos intermedios
+- Manipulación de datos con Pandas y NumPy
+- Visualización de datos
+- Modelos de Machine Learning
+- Redes Neuronales básicas
+- Proyectos prácticos de IA
 
-## 🤝 Contribuir
+## Contributing
 
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/nueva-funcion`)
-3. Commit tus cambios (`git commit -m 'Agrega nueva función'`)
-4. Push a la rama (`git push origin feature/nueva-funcion`)
+¡Contribuciones bienvenidas! Si encuentras errores o quieres agregar contenido:
+
+1. Haz fork del repositorio
+2. Crea una branch para tu cambio (`git checkout -b fix/correccion`)
+3. Commit tus cambios (`git commit -m 'fix: corregir tema X'`)
+4. Push a la branch (`git push origin fix/correccion`)
 5. Abre un Pull Request
 
-## 📄 Licencia
+## License
 
-MIT License - ver archivo [LICENSE](LICENSE) para más detalles.
-
----
-
-⭐ Si te fue útil, dale star al repositorio
+MIT © devjaime
